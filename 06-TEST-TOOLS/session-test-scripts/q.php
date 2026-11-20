@@ -1,0 +1,1 @@
+<?php require 'wp/wp-load.php'; echo get_option('show_on_front'),' ',get_option('page_on_front'),"\n"; $p=get_posts(['post_type'=>SEOB_AP_Schema::POST_TYPE,'numberposts'=>1,'post_status'=>'publish']); echo $p?get_permalink($p[0]):'none', "\n"; echo SEOB_AP_Schema::POST_TYPE,"\n";

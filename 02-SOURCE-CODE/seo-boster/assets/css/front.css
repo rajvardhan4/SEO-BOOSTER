@@ -1,0 +1,19 @@
+/* SEO Boster: keyword lines on the page. Inherits the theme's fonts and colors. */
+.seob-block {
+	max-width: 1080px;
+	margin: 32px auto;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+.seob-block .seob-line {
+	margin: 0 0 10px;
+	line-height: 1.7;
+}
+.seob-block .seob-line:last-child {
+	margin-bottom: 0;
+}
+.seob-block .seob-line:target {
+	background: rgba(255, 213, 79, 0.35);
+	border-radius: 4px;
+	transition: background 0.6s ease;
+}

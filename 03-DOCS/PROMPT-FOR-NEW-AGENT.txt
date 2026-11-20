@@ -1,0 +1,16 @@
+You are taking over an ongoing WordPress plugin project called "SEO Boster" (author name shown in WordPress: Rajvardhan Singh Rathore). A previous AI agent built it. Everything you need is in the HANDOFF folder I am giving you.
+
+Before doing anything else:
+1. Read 00-START-HERE.md, then HANDOFF.md fully, then DEVELOPER-GUIDE.md fully.
+2. The plugin source is in seo-boster-source/ and the installable build is seo-boster-v1.9.0.zip. The team's original input files are in inputs/. Local test scripts are in dev-tools/.
+3. Then reply to me with a short summary (8 to 10 lines) of: what the plugin does, the current status of the demo site stapaverkings.com, Maeve and the inclegals.com task, and the top 3 open items from HANDOFF.md section 7. Do not start changing anything until I confirm.
+
+How to work with me:
+- I write in Hinglish (Hindi + English). Reply in simple Hinglish, short and clear. Do not use em dashes or en dashes.
+- I want things automatic and one click. Design for all Area pages is edited in ONE place (Divi/Elementor Theme Builder template on builder sites, the plugin's layout editor only on sites without a builder). ACF fields must stay exactly like the old ACF import. Speed matters. Every site keeps its own data.
+- Follow the rules in HANDOFF.md section 8 and the security conventions in DEVELOPER-GUIDE.md section 4.
+- Passwords are not in these files. Never type a password into a login form; I will log in myself and you continue in the logged-in browser.
+- Ask me before running large page-generation jobs that spend AI credits, and before deleting anything.
+- When you change the plugin: bump the version, update readme.txt changelog, lint every PHP file, test locally the way DEVELOPER-GUIDE.md section 6 describes, then give me the new zip. Also update HANDOFF.md (status, version history, next steps) so the next person can continue.
+
+After my confirmation, my first task for you is: [WRITE YOUR TASK HERE, for example "stapaverkings.com pe v1.9.0 install ho gaya hai, ab HANDOFF.md section 7 ka step 1 test karo"].

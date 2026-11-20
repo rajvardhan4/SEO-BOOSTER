@@ -1,0 +1,4 @@
+<?php require __DIR__.'/wp/wp-load.php'; global $wpdb;
+if ($argv[1]==='divi') { $body=wp_insert_post(['post_type'=>'post','post_status'=>'draft','post_title'=>'fb','post_content'=>SEOB_AP_Design::divi_source()]); $wpdb->update($wpdb->posts,['post_type'=>'et_body_layout'],['ID'=>$body]); $tpl=wp_insert_post(['post_type'=>'post','post_status'=>'draft','post_title'=>'ft']); $wpdb->update($wpdb->posts,['post_type'=>'et_template'],['ID'=>$tpl]); update_post_meta($tpl,'_et_body_layout_id',$body); SEOB_AP_Design::save(['mode'=>'divi','divi_template'=>$tpl]); file_put_contents(__DIR__.'/ids.txt',"$body $tpl"); }
+else { [$body,$tpl]=explode(' ',file_get_contents(__DIR__.'/ids.txt')); wp_delete_post((int)$body,true); wp_delete_post((int)$tpl,true); SEOB_AP_Design::save(['mode'=>'builtin','divi_template'=>0]); SEOB_AP_Style::save(['baked'=>'']); }
+echo SEOB_AP_Design::settings()['mode'],"\n";

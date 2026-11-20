@@ -1,0 +1,303 @@
+Copy of the SEO team's ChatGPT prompt (first instance only).
+Full document: https://docs.google.com/document/d/1ahwMVqGr1gUJj2cS5ECap9ejx6C9-0cyVnjyKhQbc4Q/edit
+The SEO Boster plugin's Area Pages module replaces this prompt; its rules are coded in modules/area-pages/class-seob-ap-writer.php.
+
+🎯 YOUR TASK:
+ You must generate a fully ready CSV file where:
+✅ Every Service × Location combination becomes one post
+✅ Each combination becomes one CSV row
+✅ All ACF fields are filled with meaningful, unique, SEO-friendly, human-written content
+✅ Images are assigned based on the SERVICE and the number of image URLs provided
+IMPORTANT:
+* First generate all combinations
+
+* Then create ONE CSV ROW per combination
+
+* You must ONLY return a downloadable CSV file
+
+* Do NOT display CSV content in chat
+
+* Do NOT show previews
+
+* Do NOT provide explanations
+
+==================================================
+📌 INPUTS I WILL PROVIDE:
+Business Name: Rainbow Lakes AC
+Main Services (separated using “||”):
+AC Repair || AC Installation || Heat Pump Services || Ductless AC
+
+📌 REQUIRED FOR SEO — SERVICE KEYWORDS
+Service Keywords must match the same service order and can include MULTIPLE keywords per service using commas.
+Format Example:
+Service1KeywordA, Service1KeywordB ||
+Service2KeywordA, Service2KeywordB, Service2KeywordC ||
+Service3KeywordA ||
+…
+➡️ RULES FOR MULTIPLE KEYWORDS:
+   * All comma-separated keywords belong to that specific service only
+
+   * The generator must rotate/integrate them throughout:
+• seo_title
+• meta_desc
+• section content
+• headings
+
+   * Keywords CANNOT mix between services
+
+   * If only one keyword is provided → use that one
+
+   * If multiple are given → naturally vary usage for SEO optimization
+
+📌 NEW RULE — IF SERVICE KEYWORDS ARE NOT PROVIDED
+ If no service keywords are provided:
+✅ Automatically generate SEO-optimized keywords based on the service name
+Auto-generated keywords must:
+      * Include [Service Keyword] + [Location] naturally with a strong adjective (avoid reliable and expert)
+
+      * Be high-intent
+
+      * Have strong ranking potential
+
+      * Match searcher intent
+
+Example auto-generated (DO NOT reuse):
+         * “Professional paver installation services”
+
+         * “Top-rated driveway paver repair specialists”
+
+These must be used for:
+            * seo_title
+
+            * meta_desc
+
+            * content enrichment
+
+Locations (separated using “||”): 
+Beverly Hills, FL || Citrus Springs, FL || Dunnellon, FL || Homosassa, FL || Inglis, FL 
+ 
+Website URL (optional): https://rainbowlakesac.com/
+
+
+Phone Numbers (ONE or MULTIPLE using “||”):
+3524896673 
+
+  
+Follow call-button rules below.
+==================================================
+🧩 COMBINATION RULE
+You must automatically generate ALL Service × Location combinations.
+Each combination must be:
+{Service} in {Location}
+Each combination MUST generate a unique CSV row.
+📌 SERVICE KEYWORD COMBINATION LOGIC
+               * Use only the keyword(s) belonging to the same service index
+
+               * If multiple keywords exist → rotate, mix, and use naturally
+
+               * If none provided → use auto-generated SEO keyword
+
+==================================================
+🖼 SERVICE-BASED IMAGE INPUTS
+User will provide images in the same order as services:
+Section_2_left_image:
+https://rainbowlakesac.com/wp-content/uploads/2026/06/Expert-Residential-AC-Service-and-Repair.jpg || https://rainbowlakesac.com/wp-content/uploads/2026/06/Air-Conditioning-Installation.jpg 
+
+Section_3_right_image:
+https://rainbowlakesac.com/wp-content/uploads/2026/06/Rainbow-Lakes-AC-for-Your-Homes-AC-Service-and-Repair.jpg || https://rainbowlakesac.com/wp-content/uploads/2026/06/Expert-Air-Conditioning-Installation.jpg 
+
+section_7_background_image:
+https://rainbowlakesac.com/wp-content/uploads/2026/06/Residential-AC-Service-Repair.jpg || https://rainbowlakesac.com/wp-content/uploads/2026/06/AC-Installation.jpg || https://rainbowlakesac.com/wp-content/uploads/2026/06/One-Smart-System.jpg 
+==================================================
+🖼 IMAGE ASSIGNMENT LOGIC (VERY IMPORTANT)
+1️⃣ Sequential assignment (default):
+                  * Image1 → Service1
+
+                  * Image2 → Service2
+
+                  * and so on…
+
+2️⃣ If URL count < number of services:
+                     * Only first N services get images
+
+                     * Remaining services get EMPTY (“”) image fields
+
+3️⃣ If URL count = number of services:
+                        * Perfect 1-to-1 mapping
+
+4️⃣ If ONLY ONE image URL is provided:
+                           * Apply SAME image to ALL services and ALL rows
+
+5️⃣ Never modify URLs.
+==================================================
+☎️ PHONE NUMBER RULES
+                              1. If ONE phone number is provided → use for ALL rows
+
+                              2. If MULTIPLE numbers provided → assign IN ORDER, row by row
+
+                              3. Format for ALL call buttons MUST be:
+tel:+1XXXXXXXXXX
+
+==================================================
+📞 CALL BUTTON & CONTACT BUTTON RULES
+ALL call buttons (section_2, section_3, section_4, section_7) → tel:+1XXXXXXXXXX
+ ALL contact buttons → /contact-us/
+==================================================
+🏗 ACF FIELD NAMES (MUST MATCH EXACTLY)
+post_title,
+page_heading,
+seo_title,
+meta_desc,
+section_2_left_image,
+section_2_left_image_alt_tag,
+section_2_heading,
+section_2_description,
+section_2_call_button,
+section_2_contact_button,
+section_3_heading,
+section_3_description,
+section_3_call_button,
+section_3_right_image,
+section_3_right_image_alt_tag,
+section_4_heading,
+section_4_description,
+section_4_call_button,
+section_4_contact_button,
+section_4_right_image,
+section_4_right_image_alt_tag,
+section_5_main_heading,
+section_5_same_image,
+section_5_box_1_heading,
+section_5_box_1_description,
+section_5_box_2_heading,
+section_5_box_2_description,
+section_5_box_3_heading,
+section_5_box_3_description,
+section_5_box_4_heading,
+section_5_box_4_description,
+section_5_box_5_heading,
+section_5_box_5_description,
+section_5_box_6_heading,
+section_5_box_6_description,
+section_6_main_heading,
+faq_1_heading,
+faq_1_description,
+faq_2_heading,
+faq_2_description,
+faq_3_heading,
+faq_3_description,
+faq_4_heading,
+faq_4_description,
+faq_5_heading,
+faq_5_description,
+section_7_background_image,
+section_7_heading,
+section_7_description,
+section_7_call_button,
+section_7_contact_button,
+location
+==================================================
+🔍 ALT TAG RULES
+Alt tags MUST:
+                                 * Include service + location
+
+                                 * Be 6–10 words
+
+                                 * Be meaningful and SEO-friendly
+
+==================================================
+📏 WORD LIMITS (MANDATORY + UPDATED RULES)
+🔶 SECTION 2 — UPDATED
+section_2_heading: 6–8 words
+➡️ Must include Service Keyword + Location (make sure first letter of every word is capital letter)
+ ➡️ Must include a strong adjective (avoid professional, reliable, expert)
+Example (do not reuse):
+High-Performance Resilient Flooring Solutions in Corona
+section_2_description: 100–150 words
+➡️ Must be relevant to heading
+➡️ Must include one secondary keyword
+🔶 SECTION 3 — UPDATED
+section_3_heading: 6–8 words
+➡️ Must include secondary keyword/benefit + Location (make sure first letter of every word is capital letter)
+ Example (do not reuse):
+Long-Lasting Durability Resilient Flooring in Corona
+section_3_description: 100–150 words
+➡️ Must be relevant to heading
+➡️ Must include one secondary keyword
+🔶 SECTION 4 — UPDATED
+section_4_heading: 6–8 words
+➡️ Must include secondary keyword/benefit + worker certification theme + Location (make sure first letter of every word is capital letter)
+ Example (do not reuse):
+Certified Resilient Flooring Specialists in Corona
+section_4_description: 100–150 words
+➡️ Must be relevant to certification theme
+➡️ Must include one secondary keyword
+🔶 SECTION 5, 6, 7 (UNCHANGED)
+section_5_main_heading: 8–14 words
+section_5_box_heading: 5–9 words
+section_5_box_description: 35–55 words
+section_6_main_heading: 8–14 words
+section_7_heading: 8–14 words
+section_7_description: 40–60 words
+🔶 FAQ — UPDATED
+faq_heading: 6–10 words
+➡️ Must include location-targeted keyword
+ ➡️ Must be relevant to the service in that location
+Example (do not reuse):
+How often should I schedule Resilient Flooring service in Corona?
+faq_description: 55–75 words
+==================================================
+🧠 CONTENT QUALITY RULES
+For EACH row, content MUST be:
+                                    * 100% unique
+
+                                    * Human-written
+
+                                    * Strong in local SEO
+
+                                    * Strong E-E-A-T
+
+                                    * Rich with semantic variations
+
+                                    * No repeated sentences
+
+                                    * No robotic/filler content
+
+==================================================
+🎯 POST TITLE RULE
+post_title MUST be  → {Service} in {Location}
+==================================================
+📦 SEO FIELDS
+page_heading →
+Best {service} in {location}
+seo_title →
+Must include at least ONE keyword for that service.  
+Format:
+{service keyword} in {location} | {business name}, under 40-55 characters.
+meta_desc →
+Must include at least ONE keyword for that service.  
+Format:
+{business name} offers {service keyword} in {location}, + 1–2 benefits, under 160 characters.
+
+If no keywords provided → automatically use SEO-generated fallback keyword.
+==================================================
+📦 FINAL TASK
+The generator MUST:
+                                       * Create ALL service × location combinations
+
+                                       * Apply correct keywords or fallback keywords
+
+                                       * Use all comma-separated keywords intelligently
+
+                                       * Follow ALL image assignment rules
+
+                                       * Follow ALL phone assignment rules
+
+                                       * Fill every ACF field
+
+                                       * Produce ONE downloadable CSV file
+
+                                       * NEVER show CSV content in chat
+
+                                       * NEVER provide explanations or previews
+

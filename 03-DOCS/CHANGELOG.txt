@@ -1,0 +1,128 @@
+=== SEO Boster ===
+Contributors: Rajvardhan Singh Rathore
+Tags: seo, keywords, on-page seo, yoast, rank math, semrush, keyword research, schema
+Requires at least: 5.8
+Tested up to: 6.7
+Requires PHP: 7.4
+Stable tag: 2.2.0
+License: GPLv2 or later
+
+Comprehensive Agency-Grade SEO Automation Suite. Built-in SEMrush Live API Engine & Autonomous Keyword Research / Search Volume Intelligence, Rich JSON-LD Schema Markup Engine, Deterministic Rank Math 85+ Scorer, Divi Image Alt Fixer, and 1-Click Rollback Safeguards.
+
+== Description ==
+
+= Keyword Adder =
+1. Go to SEO Boster > Keyword Adder and paste your keywords, one per line.
+2. Click "Find the right pages". The plugin scores every published page using its title, URL,
+   Yoast / Rank Math focus keyphrase and page text, with synonyms (corp = corporation,
+   LLC = limited liability company, WY = Wyoming) so it understands what each page is about.
+3. Review: every keyword shows the chosen page, how strong the match is, other pages that fit,
+   and the line that will be added. Change anything or skip a keyword.
+4. Click "Add keywords to pages".
+5. The report shows each page with its link, the line number, the exact text added and a
+   direct link that jumps to that line (page-url#seob-line-3). Export it as CSV.
+
+Nothing in the page's own content is rewritten. The lines are added when the page is shown,
+so it works with Divi, Elementor, Gutenberg and the classic editor, and any keyword or whole
+run can be undone in one click from the report.
+
+= Keyword Research & Volume Engine (SEMrush Alternative) =
+* Fully autonomous in-plugin Keyword Research engine directly inside WordPress.
+* Queries live Google Autocomplete across 5 intent seeds (buyer modifiers, questions, local variations).
+* Calculates realistic monthly Search Volume, Keyword Difficulty (KD% 0-100), Intent Badges, and estimated CPC.
+* 1-Click transfer to Area Pages generator and Keyword Adder.
+
+= Rich Schema Markup Engine =
+* Injects LocalBusiness, Organization, Service, FAQPage, BreadcrumbList and WebPage JSON-LD schemas.
+* Automatically extracts FAQs from ACF repeaters and Divi accordion modules.
+
+= Security =
+* Only users with manage_options (filter: seo_boster_capability) can use it.
+* Every action checks a nonce and the user's right to edit that page.
+* Keywords are always read from the server copy, never trusted from the form.
+* All input is sanitized, all output escaped, all SQL prepared.
+* CSV export blocks spreadsheet formula injection.
+* Delete the plugin and uninstall.php removes its table, options and page data.
+
+== Changelog ==
+
+= 2.2.0 =
+* Built-in SEMrush Live API Engine & Default Agency PAT Key:
+  - Default Agency PAT Key configured (`includes/agency-config.php`), eliminating manual key entry across all agency sites.
+  - Live SEMrush v4 API integration (`https://api.semrush.com/apis/v4/keywords/v1/metrics`) with `Authorization: Apikey` header.
+  - Zero-downtime graceful fallback: If SEMrush returns 403 (needs active API units / permissions) or network error, plugin automatically falls back to live Google Suggest engine with zero interruption.
+  - 1-Click "Test Connection" status checker in Keyword Research admin panel.
+  - Data Source badges (`SEMrush` or `Live Google`) displayed per keyword in results table and CSV exports.
+
+= 2.1.0 =
+* Autonomous Keyword Research & Search Volume Engine (In-Plugin SEMrush Alternative):
+  - Real-time live Google Suggest API integration across 5 intent seeds (direct, buyer modifiers, question modifiers, transactional keywords, location variations).
+  - Algorithmic monthly search volume calculation with local demographic multipliers and city tier adjustments.
+  - Keyword Difficulty (KD% 0-100) scoring based on search phrase length, commercial modifier presence, and competition.
+  - Search Intent classification badges (Commercial, Transactional, Informational, Local).
+  - Estimated CPC calculation for PPC benchmarking.
+  - 1-Click transfer to Area Pages generator and Keyword Adder.
+  - CSV export for reporting and client presentations.
+
+= 2.0.0 =
+* Full SEO Pilot Integration:
+  - Pillar 1: SEMrush CSV Upload & Intelligent Clustering with auto-fill into Area Pages.
+  - Pillar 2: Calibrated AI Copywriter (50-60 char title, 150-158 char meta description, exact primary keyword in first 10% of content).
+  - Pillar 3: Deterministic Rank Math 85+ Postmeta Bridge with 10-point mathematical scoring rubric.
+  - Pillar 4: Divi Blurb, Gallery & Image Alt Automation (Tier 1 shortcode attribute injection + Tier 2 runtime filter at priority 999).
+  - Pillar 5: Side-by-Side Review & Approval Interface with 1-click batch publishing and instant rollback.
+  - Pillar 6: Automated 1-Click Rollback Snapshot Manager (`_seob_backup_snapshot`).
+* Rich JSON-LD Schema Markup Engine:
+  - LocalBusiness / Organization Schema with address, geo coordinates, telephone, openingHours, priceRange.
+  - Service Schema with provider reference and areaServed.
+  - FAQPage Schema auto-extracted from ACF repeater fields and Divi accordion modules.
+  - BreadcrumbList and WebPage schema.
+* Core Pages Optimizer Module:
+  - Audit and optimize Home, About, Services pages to Rank Math 85+ with strict heading hierarchy and snapshots.
+
+= 1.4.0 =
+* Images: every page now gets its own photos automatically. Each location page of a service gets a
+  different set of matching photos from the Media Library (and Pexels if a key is saved). Logos, badges,
+  team headshots and photos of other services are left out; general shop photos are used only when a
+  service has too few photos.
+* SEO image names (on by default): each page gets its own copy of its photos named after the page
+  (balayage-in-cary-nc-1.jpg) with the page's alt text, like renaming and uploading by hand.
+* New report button "Different images on every page" fixes pages that were made before (no AI, text unchanged).
+* Phone number and contact page are read from the site and filled in the form automatically.
+
+= 1.3.1 =
+* Much faster: several pages are written at the same time (default 4, AI & images tab), the AI is
+  asked again only for real problems (not for a few words over or under), and "Fast" writing speed
+  is the default.
+* Divi: the Areas We Serve template now uses the site's global Theme Builder header and footer
+  (existing templates are fixed automatically). Layout fonts follow the site's Divi heading and body fonts.
+
+= 1.3.0 =
+* Setup installs the SCO layout in Divi or Elementor Theme Builder automatically.
+* Menu builder and Areas We Serve hub page with drag-and-drop order.
+
+= 1.2.2 =
+* The default Area page design is now the team's SCO layout (brand color banner, pill Call and Contact buttons, brand color middle section, white cards on grey, brand color FAQ bars, image call to action).
+* Second brand color setting. "Start from a design" buttons (SCO or Modern) in the layout editor.
+
+= 1.2.1 =
+* Brand color shows only the real site colors (most used on the homepage), max 10.
+* Click any section in the layout preview to edit it. Clearer: one layout for all pages.
+
+= 1.2.0 =
+* Page layout editor with live preview, export and import.
+* One-click setup that imports ACF fields, post type and taxonomy into ACF.
+* Automatic images from the Media Library, optional Pexels.
+
+= 1.1.1 =
+* Works with the latest Claude and OpenAI models (no temperature, thinking turned off, bigger token budget).
+* One AI call per request so hosts that stop long requests do not break jobs; pages finish even if the tab is closed.
+* Job pauses itself when 3 pages in a row fail with the same error.
+* Phone numbers like 814.834.1700 are kept whole.
+* Better brand color detection on Divi sites.
+
+= 1.1.0 =
+* New Area Pages module.
+
+= 1.0.0 =
+* First release with the Keyword Adder module.

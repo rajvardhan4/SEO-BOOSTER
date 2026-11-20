@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Redundant full folder backup archive
+SEO-Boster-PROJECT.zip
+
+# Logs
+*.log
