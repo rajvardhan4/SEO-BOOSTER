@@ -60,6 +60,7 @@
 
 ## 4. Current State & Site Inventory
 
+- **Git Repository:** `https://github.com/rajvardhan4/SEO-BOOSTER.git` (Branch `main` - Up to date, verified clean working tree).
 - **Plugin Source:** `02-SOURCE-CODE/seo-boster/` (v2.2.0 - all 45 PHP files passed PHP 8.2 linting with 0 errors).
 - **Installable Zip:** `01-PLUGIN-INSTALL/seo-boster-v2.2.0.zip` (208 KB, strict POSIX forward-slash entries, verified extraction).
 - **Credentials:**
